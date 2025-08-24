@@ -15,16 +15,8 @@ This project uses `semantic-router` to intelligently decide which Gemini model s
 The routing is determined by semantic similarity, as defined in [`router.yaml`](./router.yaml). The router matches the user's query to the best route based on example utterances.
 
 - **`gemini-2.5-pro`**: For complex, multi-step tasks requiring deep reasoning, code generation, and analysis of large documents.
-
-  - **Recommended for:** In-depth analysis, comprehensive business plans, full-stack application development.
-
 - **`gemini-2.5-flash`**: A balanced model for tasks that require a mix of speed, cost-efficiency, and strong reasoning capabilities.
-
-  - **Recommended for:** Summarization, brainstorming, professional communication, and content explanation.
-
 - **`gemini-2.5-flash-lite`**: The fastest and most cost-effective model, optimized for high-volume, low-latency tasks like classification and data extraction.
-
-  - **Recommended for:** Classification, translation, data extraction, and quick conversational queries.
 
 ## 🚀 Getting Started
 
