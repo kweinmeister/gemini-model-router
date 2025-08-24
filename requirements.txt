@@ -1,0 +1,5 @@
+fastapi[standard]==0.116.1
+google-cloud-aiplatform==1.110.0
+google-genai==1.31.0
+python-dotenv==1.1.1
+semantic-router==0.1.11

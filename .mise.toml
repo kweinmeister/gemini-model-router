@@ -1,0 +1,10 @@
+[tools]
+python = { version = "3.13", venv = ".venv" }
+uv = "latest"
+
+[settings]
+experimental = true
+python_venv_auto_create = true
+
+[env]
+_.python.venv = { path = ".venv", create = true, uv_create_args = ['--seed'] }

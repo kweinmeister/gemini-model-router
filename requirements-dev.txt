@@ -1,0 +1,9 @@
+# This file should be a superset of requirements.txt
+# Use 'pip install -r requirements-dev.txt' for development.
+-r requirements.txt
+
+# Development-specific dependencies
+httpx==0.28.1
+pytest==8.4.1
+pytest-asyncio==1.1.0
+pytest-mock==3.14.1

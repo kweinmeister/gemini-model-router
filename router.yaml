@@ -1,0 +1,61 @@
+encoder_name: gemini-embedding-001
+encoder_type: google
+routes:
+- description: For complex, multi-step tasks requiring deep reasoning, code generation, and analysis of large documents.
+  function_schemas: null
+  llm:
+    class: GoogleLLM
+    model: gemini-2.5-pro
+    module: main
+  metadata:
+    use_case: "Complex problem-solving and content creation"
+    recommended_for: "In-depth analysis, comprehensive business plans, full-stack application development"
+  name: gemini-2.5-pro
+  score_threshold: 0.0
+  utterances:
+  - Develop a comprehensive, multi-year business plan for a direct-to-consumer sustainable
+    fashion brand, including financial projections and marketing strategies.
+  - Write a Python script to perform sentiment analysis on a large CSV of customer
+    reviews, generate visualizations, and create a summary report.
+  - Compare and contrast the philosophical implications of determinism and free will
+    in the context of advanced artificial intelligence, citing relevant academic sources.
+  - Generate a full-stack web application in Python and React for managing a personal
+    library, including database schema and user authentication.
+- description: A balanced model for tasks that require a mix of speed, cost-efficiency, and strong reasoning capabilities.
+  function_schemas: null
+  llm:
+    class: GoogleLLM
+    model: gemini-2.5-flash
+    module: main
+  metadata:
+    use_case: "General purpose, high-throughput tasks"
+    recommended_for: "Summarization, brainstorming, professional communication, and content explanation"
+  name: gemini-2.5-flash
+  score_threshold: 0.0
+  utterances:
+  - Summarize the latest episode of the 'Tech Today' podcast in three paragraphs.
+  - Explain the difference between nuclear fission and fusion in simple, easy-to-understand
+    terms.
+  - Help me brainstorm some creative ideas for a team-building event for a remote-first
+    company.
+  - Draft a professional email to a client requesting a project extension.
+- description: The fastest and most cost-effective model, optimized for high-volume, low-latency tasks like classification and data extraction.
+  function_schemas: null
+  llm:
+    class: GoogleLLM
+    model: gemini-2.5-flash-lite
+    module: main
+  metadata:
+    use_case: "Real-time, simple tasks"
+    recommended_for: "Classification, translation, data extraction, and quick conversational queries"
+  name: gemini-2.5-flash-lite
+  score_threshold: 0.0
+  utterances:
+  - 'Classify this email as ''Spam'' or ''Not Spam'': ''Congratulations you''ve won
+    a prize!'''
+  - 'Extract the phone number and email address from this text: ''My number is (555)
+    123-4567, email is test@example.com.'''
+  - Translate 'How much does this cost?' to Japanese.
+  - What's the weather like?
+  - How are you doing?
+  - Tell me a fun fact.

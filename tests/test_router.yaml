@@ -1,0 +1,19 @@
+encoder_name: "mock-encoder"
+encoder_type: "google"
+routes:
+  - name: "test-route-1"
+    description: "For testing purposes"
+    utterances:
+      - "This is a test utterance for route 1"
+    llm:
+      module: "main"
+      class: "GoogleLLM"
+      model: "gemini-test-1"
+  - name: "test-route-2"
+    description: "Another test route"
+    utterances:
+      - "This is a test utterance for route 2"
+    llm:
+      module: "main"
+      class: "GoogleLLM"
+      model: "gemini-test-2"
