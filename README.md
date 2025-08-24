@@ -14,17 +14,17 @@ This project uses `semantic-router` to intelligently decide which Gemini model s
 
 The routing is determined by semantic similarity, as defined in [`router.yaml`](./router.yaml). The router matches the user's query to the best route based on example utterances.
 
-- **`gemini-2.5-pro`**: For complex, multi-step tasks requiring deep reasoning, code generation, and analysis of large documents.
-- **`gemini-2.5-flash`**: A balanced model for tasks that require a mix of speed, cost-efficiency, and strong reasoning capabilities.
-- **`gemini-2.5-flash-lite`**: The fastest and most cost-effective model, optimized for high-volume, low-latency tasks like classification and data extraction.
+- **[`gemini-2.5-pro`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro)**: For complex, multi-step tasks requiring deep reasoning, code generation, and analysis of large documents.
+- **[`gemini-2.5-flash`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash)**: A balanced model for tasks that require a mix of speed, cost-efficiency, and strong reasoning capabilities.
+- **[`gemini-2.5-flash-lite`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-lite)**: The fastest and most cost-effective model, optimized for high-volume, low-latency tasks like classification and data extraction.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-1. A Google Cloud Project with billing enabled.
+1. A [Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects) with billing enabled.
 1. The `gcloud` CLI installed and authenticated (`gcloud auth login` and `gcloud config set project YOUR_PROJECT_ID`).
-1. The following Google Cloud APIs enabled: Cloud Run, Vertex AI, Cloud Build, and Artifact Registry.
+1. The following Google Cloud APIs enabled: [Cloud Run](https://cloud.google.com/run), [Vertex AI](https://cloud.google.com/vertex-ai), [Cloud Build](https://cloud.google.com/build), and [Artifact Registry](https://cloud.google.com/artifact-registry/docs).
 
 ### ⚙️ Configuration
 
@@ -88,6 +88,8 @@ The application exposes the following endpoints:
 
 ## ☁️ Deployment to Cloud Run
 
+This project is designed for easy deployment to [Cloud Run](https://cloud.google.com/run), a fully managed serverless platform that automatically scales your application based on traffic, so you only pay for what you use.
+
 1. **Deploy Directly from Source Code**:
    First, ensure the environment variables are set as described in the [Configuration](#%EF%B8%8F-configuration) section. Then, run the following command to deploy.
 
@@ -109,8 +111,8 @@ For production, you should remove this flag and implement authentication. For ad
 
 Here are some recommended authentication methods:
 
-- **Identity-Aware Proxy (IAP):** Secure your application with Google Cloud's IAP to control access.
-- **API Gateway:** Place your service behind an API Gateway to manage authentication, rate limiting, and monitoring.
+- **[Identity-Aware Proxy (IAP)](https://cloud.google.com/iap):** Secure your application with Google Cloud's IAP to control access.
+- **[API Gateway](https://cloud.google.com/api-gateway):** Place your service behind an API Gateway to manage authentication, rate limiting, and monitoring.
 - **Service-to-Service Authentication:** If your service will be called by other services, use IAM-based service accounts for secure, authenticated communication.
 
 Always ensure your production deployments are secured to prevent unauthorized access and potential misuse.
