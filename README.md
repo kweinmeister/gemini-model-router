@@ -14,9 +14,9 @@ This project uses `semantic-router` to intelligently decide which Gemini model s
 
 The routing is determined by semantic similarity, as defined in [`router.yaml`](./router.yaml). The router matches the user's query to the best route based on example utterances.
 
-- **[`gemini-2.5-pro`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro)**: For complex, multi-step tasks requiring deep reasoning, code generation, and analysis of large documents.
-- **[`gemini-2.5-flash`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash)**: A balanced model for tasks that require a mix of speed, cost-efficiency, and strong reasoning capabilities.
-- **[`gemini-2.5-flash-lite`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-lite)**: The fastest and most cost-effective model, optimized for high-volume, low-latency tasks like classification and data extraction.
+- **[`gemini-3.1-pro-preview`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-1-pro)**: For complex, multi-step tasks requiring deep reasoning, code generation, and analysis of large documents.
+- **[`gemini-3-flash-preview`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-flash)**: A balanced model for tasks that require a mix of speed, cost-efficiency, and strong reasoning capabilities.
+- **[`gemini-3.1-flash-lite-preview`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-1-flash-lite)**: The fastest and most cost-effective model, optimized for high-volume, low-latency tasks like classification and data extraction.
 
 ## 🚀 Getting Started
 
@@ -141,7 +141,7 @@ To test the endpoint, first set the `SERVICE_URL` environment variable. The `cur
 
 Now you can use `curl` to test the different routing tiers.
 
-- **Test a complex query (routes to `gemini-2.5-pro`):**
+- **Test a complex query (routes to `gemini-3.1-pro-preview`):**
 
   ```sh
   curl -X POST "$SERVICE_URL/query" \
@@ -149,7 +149,7 @@ Now you can use `curl` to test the different routing tiers.
   -d '{"contents": [{"text": "Compare and contrast the philosophical implications of determinism and free will in the context of advanced artificial intelligence, citing relevant academic sources."}]}'
   ```
 
-- **Test a general-purpose query (routes to `gemini-2.5-flash`):**
+- **Test a general-purpose query (routes to `gemini-3-flash-preview`):**
 
   ```sh
   curl -X POST "$SERVICE_URL/query" \
@@ -157,7 +157,7 @@ Now you can use `curl` to test the different routing tiers.
   -d '{"contents": [{"text": "Help me brainstorm some creative ideas for a team-building event for a remote-first company."}]}'
   ```
 
-- **Test a simple query (routes to `gemini-2.5-flash-lite`):**
+- **Test a simple query (routes to `gemini-3.1-flash-lite-preview`):**
 
   ```sh
   curl -X POST "$SERVICE_URL/query" \
