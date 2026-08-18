@@ -25,12 +25,12 @@ routes:
   function_schemas: null
   llm:
     class: GoogleLLM
-    model: gemini-3-flash-preview
+    model: gemini-3.7-flash
     module: main
   metadata:
     use_case: "General purpose, high-throughput tasks"
     recommended_for: "Summarization, brainstorming, professional communication, and content explanation"
-  name: gemini-3-flash-preview
+  name: gemini-3.7-flash
   score_threshold: 0.0
   utterances:
   - Summarize the latest episode of the 'Tech Today' podcast in three paragraphs.
@@ -43,12 +43,12 @@ routes:
   function_schemas: null
   llm:
     class: GoogleLLM
-    model: gemini-3.1-flash-lite-preview
+    model: gemini-3.5-flash-lite
     module: main
   metadata:
     use_case: "Real-time, simple tasks"
     recommended_for: "Classification, translation, data extraction, and quick conversational queries"
-  name: gemini-3.1-flash-lite-preview
+  name: gemini-3.5-flash-lite
   score_threshold: 0.0
   utterances:
   - 'Classify this email as ''Spam'' or ''Not Spam'': ''Congratulations you''ve won
