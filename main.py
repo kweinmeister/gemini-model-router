@@ -35,7 +35,7 @@ class GoogleLLM(BaseLLM):
         if cls._client is None:
             logger.info("Initializing singleton GenAI client...")
             project_id = os.getenv("GOOGLE_CLOUD_PROJECT")
-            location = os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
+            location = os.getenv("GOOGLE_CLOUD_LOCATION", "global")
             if not project_id:
                 raise ValueError("GOOGLE_CLOUD_PROJECT environment variable not set.")
             cls._client = genai.Client(
@@ -96,8 +96,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
     location = os.getenv("GOOGLE_CLOUD_LOCATION")
     if not location:
-        location = "us-central1"
-        logger.info("GOOGLE_CLOUD_LOCATION not set, defaulting to 'us-central1'.")
+        location = "global"
+        logger.info("GOOGLE_CLOUD_LOCATION not set, defaulting to 'global'.")
     os.environ["GOOGLE_LOCATION"] = location
 
     logger.info("Loading semantic router...")
