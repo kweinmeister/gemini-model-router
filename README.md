@@ -32,7 +32,8 @@ The application is configured using environment variables. For both local develo
 
 ```sh
 export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
-export GOOGLE_CLOUD_LOCATION="us-central1"
+export GOOGLE_CLOUD_LOCATION="global"  # Vertex endpoint
+export REGION="us-central1"            # Cloud Run region
 export SERVICE_NAME="gemini-model-router"
 export DEBUG="False"  # Optional: Set to "True" for verbose logging
 ```
@@ -96,7 +97,7 @@ This project is designed for easy deployment to [Cloud Run](https://cloud.google
    ```sh
    gcloud run deploy "$SERVICE_NAME" \
      --source . \
-     --region="$GOOGLE_CLOUD_LOCATION" \
+     --region="$REGION" \
      --allow-unauthenticated \
      --labels="dev-tutorial=code-model-router" \
      --set-env-vars="GOOGLE_CLOUD_PROJECT=$GOOGLE_CLOUD_PROJECT" \
