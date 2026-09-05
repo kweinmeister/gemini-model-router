@@ -1,5 +1,5 @@
 fastapi[standard]==0.141.1
-google-cloud-aiplatform==1.140.0
-google-genai==1.66.0
+google-cloud-aiplatform==2.1.0
+google-genai==2.19.0
 python-dotenv==1.2.3
 semantic-router==0.1.12
